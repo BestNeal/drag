@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			html,body{
+				margin: 0;
+				padding: 0;
+			}
+			div,img{
+				width: 100px;
+				height: 100px;
+				background: red;
+				position: absolute;
+				top: 0;
+				left: 0;
+				z-index: 1;
+			}
+			#box3{
+				transition: all .6s ease-in;
+				left: 300px;
+			}
+			#box2{
+				background: orange;
+				left: 150px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box"></div>
+		<div id="box2"></div>
+		<img src="./img/user.jpg" id="box3" />
+		<script src="./js/drag.js"></script>
+		<script type="text/javascript">
+			window.onload = function(){
+				var oDrag = new Drag();
+				oDrag.init({
+					id:'box'
+				});
+				var oChildDrag = new Drag();
+				oChildDrag.init({
+					id:'box2',
+					starMove:true
+				});
+				var oChildDrag3 = new Drag();
+				oChildDrag3.init({
+					id:'box3',
+					shadow:true
+				});
+			}
+
+		</script>
+	</body>
+</html>
